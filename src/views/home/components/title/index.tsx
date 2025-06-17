@@ -21,7 +21,7 @@ const Title: React.FC = () => {
         </div>
         <div className=" pl-[50px]">
           <div className=" text-[48px] mt-[-5px]">Kevin Du</div>
-          <div>React | Typescript</div>
+          <div className=" text-gray-400">React ｜ Typescript</div>
           <div className=" pt-[16px] flex">
             {imgArr.map((item, index) => {
               return (
