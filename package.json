@@ -46,9 +46,11 @@
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.2.0",
     "react-intl": "^6.6.8",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^6.4.1",
     "react-transition-group": "^4.4.5",
     "react-use": "^17.5.0",
+    "remark-gfm": "^4.0.1",
     "styled-components": "^6.1.11",
     "test": "^3.3.0",
     "zustand": "^4.5.2"

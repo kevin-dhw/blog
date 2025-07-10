@@ -22,43 +22,45 @@ const Home: React.FC = () => {
     },
   ]);
   return (
-    <div className=" flex justify-between p-[20px] items-center">
-      <div className=" flex">
-        {tabs.map((item, index) => {
-          return (
-            <div
-              onClick={() => {
-                console.log(12344, index);
-                setTabs((data) => {
-                  data.forEach((item, idx) => {
-                    if (idx === index) {
-                      item.isSelected = true;
-                    } else {
-                      item.isSelected = false;
-                    }
+    <div>
+      <div className=" flex justify-between p-[20px] items-center">
+        <div className=" flex">
+          {tabs.map((item, index) => {
+            return (
+              <div
+                onClick={() => {
+                  console.log(12344, index);
+                  setTabs((data) => {
+                    data.forEach((item, idx) => {
+                      if (idx === index) {
+                        item.isSelected = true;
+                      } else {
+                        item.isSelected = false;
+                      }
+                    });
+                    return [...data];
                   });
-                  return [...data];
-                });
-              }}
-              key={index}
-              className={classNames(
-                " mr-[14px] text-gray-400 cursor-pointer text-[18px]",
-                " hover:text-gray-600 duration-300 ease-in-out delay-100",
-                item.isSelected && " text-black"
-              )}
-            >
-              {item.label}
-            </div>
-          );
-        })}
-      </div>
-      <div>
-        <div className=" flex items-center">
-          <span>Kevin Du </span>
-          <img
-            className=" w-[40px] h-[40px] rounded-full ml-[20px]"
-            src={avatarImg}
-          ></img>
+                }}
+                key={index}
+                className={classNames(
+                  " mr-[14px] text-gray-400 cursor-pointer text-[18px]",
+                  " hover:text-gray-600 duration-300 ease-in-out delay-100",
+                  item.isSelected && " text-black"
+                )}
+              >
+                {item.label}
+              </div>
+            );
+          })}
+        </div>
+        <div>
+          <div className=" flex items-center">
+            <span>Kevin Du </span>
+            <img
+              className=" w-[40px] h-[40px] rounded-full ml-[20px]"
+              src={avatarImg}
+            ></img>
+          </div>
         </div>
       </div>
     </div>
