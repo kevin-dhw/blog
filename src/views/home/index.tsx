@@ -21,7 +21,6 @@ const Home: React.FC = () => {
       label: "Me",
     },
   ]);
-
   return (
     <div className=" flex justify-between p-[20px] items-center">
       <div className=" flex">
