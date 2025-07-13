@@ -4,11 +4,13 @@ import avatarImg from "./img/avatar.jpg";
 import linkedIn from "./img/linkedIn.jpeg";
 import github from "./img/github.jpeg";
 import gmail from "./img/gmail.jpg";
-import useTabStore from "../store/useTabStore";
+import useTabStore from "../../store/useTabStore";
 import AboutMe from "./components/me";
+import { useNavigate } from "react-router-dom";
 
 const Home: React.FC = () => {
   const { tabs, changeTabs } = useTabStore();
+  const navigate = useNavigate();
   const curTab = tabs.find((item) => item.isSelected)?.label;
   return (
     <div>
@@ -54,7 +56,12 @@ const Home: React.FC = () => {
         </div>
       </div>
       {/* main content */}
-      <div className=" px-[20px]">
+      <div
+        onClick={() => {
+          navigate("/test");
+        }}
+        className=" px-[20px]"
+      >
         content
         {curTab === "Me" && <AboutMe />}
       </div>
