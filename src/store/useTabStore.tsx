@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { TabItemType } from "../views/home/interface";
+import { TabItemType } from "../components/home/interface";
 
 export interface State {
   tabs: TabItemType[];

@@ -58,7 +58,7 @@ const Home: React.FC = () => {
       {/* main content */}
       <div
         onClick={() => {
-          navigate("/test");
+          navigate("/me");
         }}
         className=" px-[20px]"
       >
