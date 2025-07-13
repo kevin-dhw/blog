@@ -1,14 +1,12 @@
 import React from "react";
-import { Button } from "antd";
+import Home from "../../components/home";
 
-const Test: React.FC = () => {
+const Project: React.FC = () => {
   return (
-    <div className=" h-[100vh]">
-      <div className=" text-white">selecttest</div>
-      <br />
-      <Button>按钮</Button>
+    <div>
+      <Home></Home>
+      <div className=" px-[20px]">content Project</div>
     </div>
   );
 };
-
-export default Test;
+export default Project;

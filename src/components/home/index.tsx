@@ -5,13 +5,12 @@ import linkedIn from "./img/linkedIn.jpeg";
 import github from "./img/github.jpeg";
 import gmail from "./img/gmail.jpg";
 import useTabStore from "../../store/useTabStore";
-import AboutMe from "./components/me";
 import { useNavigate } from "react-router-dom";
 
 const Home: React.FC = () => {
   const { tabs, changeTabs } = useTabStore();
   const navigate = useNavigate();
-  const curTab = tabs.find((item) => item.isSelected)?.label;
+
   return (
     <div>
       <div className=" flex justify-between p-[20px] items-center">
@@ -21,6 +20,9 @@ const Home: React.FC = () => {
               <div
                 onClick={() => {
                   changeTabs(index);
+                  setTimeout(() => {
+                    navigate(`/${item.url}`);
+                  }, 200);
                 }}
                 key={index}
                 className={classNames(
@@ -54,16 +56,6 @@ const Home: React.FC = () => {
             ></img>
           </div>
         </div>
-      </div>
-      {/* main content */}
-      <div
-        onClick={() => {
-          navigate("/me");
-        }}
-        className=" px-[20px]"
-      >
-        content
-        {curTab === "Me" && <AboutMe />}
       </div>
     </div>
   );

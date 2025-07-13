@@ -5,8 +5,7 @@ const Me: React.FC = () => {
   return (
     <div>
       <Home></Home>
-      <span>122</span>
-      2344
+      <div className=" px-[20px]">content me</div>
     </div>
   );
 };

@@ -13,26 +13,32 @@ const useTabStore = create<State & Action>((set) => ({
     {
       isSelected: true,
       label: "Me",
+      url: "me",
     },
     {
       isSelected: false,
       label: "Tech Stack",
+      url: "stack",
     },
     {
       isSelected: false,
       label: "Projects",
+      url: "project",
     },
     {
       isSelected: false,
       label: "Blog",
+      url: "blog",
     },
     {
       isSelected: false,
       label: "Notes",
+      url: "notes",
     },
   ],
   changeTabs: (idx: number) =>
     set((state) => {
+      console.log("tab change");
       state.tabs.forEach((item, index) => {
         if (idx === index) {
           item.isSelected = true;

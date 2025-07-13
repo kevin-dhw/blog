@@ -5,4 +5,5 @@ export interface ImgItemType {
 export interface TabItemType {
   label: string;
   isSelected: boolean;
+  url: string;
 }
