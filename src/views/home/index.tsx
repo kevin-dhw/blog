@@ -6,7 +6,7 @@ const Home: React.FC = () => {
   const [tabs, setTabs] = useState([
     {
       isSelected: true,
-      label: "Blog",
+      label: "Me",
     },
     {
       isSelected: false,
@@ -14,11 +14,11 @@ const Home: React.FC = () => {
     },
     {
       isSelected: false,
-      label: "Learn",
+      label: "Blog",
     },
     {
       isSelected: false,
-      label: "Me",
+      label: "Learn",
     },
   ]);
   return (
