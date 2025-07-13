@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import avatarImg from "./img/avatar.jpg";
+import linkedIn from "./img/linkedIn.jpeg";
+import github from "./img/github.jpeg";
+import gmail from "./img/gmail.jpg";
 
 const Home: React.FC = () => {
   const [tabs, setTabs] = useState([
@@ -29,7 +32,6 @@ const Home: React.FC = () => {
             return (
               <div
                 onClick={() => {
-                  console.log(12344, index);
                   setTabs((data) => {
                     data.forEach((item, idx) => {
                       if (idx === index) {
@@ -40,12 +42,15 @@ const Home: React.FC = () => {
                     });
                     return [...data];
                   });
+                  setTimeout(() => {
+                    console.log(tabs, "tabs");
+                  });
                 }}
                 key={index}
                 className={classNames(
                   " mr-[14px] text-gray-400 cursor-pointer text-[18px]",
                   " hover:text-gray-600 duration-300 ease-in-out delay-100",
-                  item.isSelected && " text-black"
+                  item.isSelected && " text-[#000] font-bold"
                 )}
               >
                 {item.label}
@@ -55,7 +60,18 @@ const Home: React.FC = () => {
         </div>
         <div>
           <div className=" flex items-center">
-            <span>Kevin Du </span>
+            <img
+              className=" w-[26px] h-[26px] rounded-lg ml-[20px] cursor-pointer"
+              src={gmail}
+            ></img>
+            <img
+              className=" w-[26px] h-[26px] rounded-lg ml-[20px] cursor-pointer"
+              src={github}
+            ></img>
+            <img
+              className=" w-[26px] h-[26px] rounded-lg ml-[20px] cursor-pointer"
+              src={linkedIn}
+            ></img>
             <img
               className=" w-[40px] h-[40px] rounded-full ml-[20px]"
               src={avatarImg}
