@@ -1,29 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import classNames from "classnames";
 import avatarImg from "./img/avatar.jpg";
 import linkedIn from "./img/linkedIn.jpeg";
 import github from "./img/github.jpeg";
 import gmail from "./img/gmail.jpg";
+import useTabStore from "../store/useTabStore";
+import AboutMe from "./components/me";
 
 const Home: React.FC = () => {
-  const [tabs, setTabs] = useState([
-    {
-      isSelected: true,
-      label: "Me",
-    },
-    {
-      isSelected: false,
-      label: "Projects",
-    },
-    {
-      isSelected: false,
-      label: "Blog",
-    },
-    {
-      isSelected: false,
-      label: "Learn",
-    },
-  ]);
+  const { tabs, changeTabs } = useTabStore();
+  const curTab = tabs.find((item) => item.isSelected)?.label;
   return (
     <div>
       <div className=" flex justify-between p-[20px] items-center">
@@ -32,19 +18,7 @@ const Home: React.FC = () => {
             return (
               <div
                 onClick={() => {
-                  setTabs((data) => {
-                    data.forEach((item, idx) => {
-                      if (idx === index) {
-                        item.isSelected = true;
-                      } else {
-                        item.isSelected = false;
-                      }
-                    });
-                    return [...data];
-                  });
-                  setTimeout(() => {
-                    console.log(tabs, "tabs");
-                  });
+                  changeTabs(index);
                 }}
                 key={index}
                 className={classNames(
@@ -78,6 +52,11 @@ const Home: React.FC = () => {
             ></img>
           </div>
         </div>
+      </div>
+      {/* main content */}
+      <div className=" px-[20px]">
+        content
+        {curTab === "Me" && <AboutMe />}
       </div>
     </div>
   );
