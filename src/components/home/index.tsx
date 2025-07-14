@@ -1,9 +1,9 @@
 import React from "react";
 import classNames from "classnames";
-import avatarImg from "./img/avatar.jpg";
-import linkedIn from "./img/linkedIn.jpeg";
-import github from "./img/github.jpeg";
-import gmail from "./img/gmail.jpg";
+import avatarImg from "../../assets/img/avatar.jpg";
+import linkedIn from "../../assets/img/linkedIn.jpg";
+import github from "../../assets/img/github.jpg";
+import gmail from "../../assets/img/gmail.jpg";
 import useTabStore from "../../store/useTabStore";
 import { useNavigate } from "react-router-dom";
 
@@ -39,11 +39,11 @@ const Home: React.FC = () => {
         <div>
           <div className=" flex items-center">
             <img
-              className=" w-[26px] h-[26px] rounded-lg ml-[20px] cursor-pointer"
+              className=" w-[26px] h-[20px] rounded-lg ml-[20px] cursor-pointer"
               src={gmail}
             ></img>
             <img
-              className=" w-[26px] h-[26px] rounded-lg ml-[20px] cursor-pointer"
+              className=" w-[24px] h-[24px] rounded-lg ml-[20px] cursor-pointer"
               src={github}
             ></img>
             <img

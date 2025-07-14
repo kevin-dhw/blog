@@ -1,0 +1,15 @@
+.stackContainer {
+    display: flex;
+    flex-direction: column;
+    background: red;
+    height: 100vh;
+    .container {
+        flex: 1;
+        background: black;
+        height: calc(100% - 80px);
+        .main-container {
+            // overflow-y: scroll;
+            height: 2000px;
+        }
+    }
+}
