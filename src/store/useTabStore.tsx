@@ -15,11 +15,11 @@ const useTabStore = create<State & Action>((set) => ({
       label: "Me",
       url: "me",
     },
-    {
-      isSelected: false,
-      label: "Tech Stack",
-      url: "stack",
-    },
+    // {
+    //   isSelected: false,
+    //   label: "Tech Stack",
+    //   url: "stack",
+    // },
     {
       isSelected: false,
       label: "Projects",
@@ -30,11 +30,11 @@ const useTabStore = create<State & Action>((set) => ({
       label: "Blog",
       url: "blog",
     },
-    {
-      isSelected: false,
-      label: "Notes",
-      url: "notes",
-    },
+    // {
+    //   isSelected: false,
+    //   label: "Notes",
+    //   url: "notes",
+    // },
   ],
   changeTabs: (idx: number) =>
     set((state) => {
