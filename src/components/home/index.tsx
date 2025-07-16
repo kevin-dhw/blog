@@ -38,7 +38,7 @@ const Home: React.FC = () => {
         </div>
         <div>
           <div className=" flex items-center">
-            <img
+            {/* <img
               className=" w-[26px] h-[20px] rounded-lg ml-[20px] cursor-pointer"
               src={gmail}
             ></img>
@@ -49,7 +49,7 @@ const Home: React.FC = () => {
             <img
               className=" w-[26px] h-[26px] rounded-lg ml-[20px] cursor-pointer"
               src={linkedIn}
-            ></img>
+            ></img> */}
             <img
               className=" w-[40px] h-[40px] rounded-full ml-[20px]"
               src={avatarImg}
