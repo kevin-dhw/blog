@@ -5,7 +5,7 @@ const Blog: React.FC = () => {
   return (
     <div>
       <Home></Home>
-      <div className=" px-[20px]">content Blog</div>
+      <div className=" px-[20px]">content Blog122</div>
     </div>
   );
 };
