@@ -1,9 +1,9 @@
 import React from "react";
 import classNames from "classnames";
 import avatarImg from "../../assets/img/avatar.jpg";
-import linkedIn from "../../assets/img/linkedin.jpg";
-import github from "../../assets/img/github.jpg";
-import gmail from "../../assets/img/gmail.jpg";
+// import linkedIn from "../../assets/img/linkedin.jpg";
+// import github from "../../assets/img/github.jpg";
+// import gmail from "../../assets/img/gmail.jpg";
 import useTabStore from "../../store/useTabStore";
 import { useNavigate } from "react-router-dom";
 
