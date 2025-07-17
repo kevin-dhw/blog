@@ -15,11 +15,6 @@ const useTabStore = create<State & Action>((set) => ({
       label: "Me",
       url: "me",
     },
-    // {
-    //   isSelected: false,
-    //   label: "Tech Stack",
-    //   url: "stack",
-    // },
     {
       isSelected: false,
       label: "Projects",

@@ -1,9 +1,6 @@
 import React from "react";
 import classNames from "classnames";
 import avatarImg from "../../assets/img/avatar.jpg";
-// import linkedIn from "../../assets/img/linkedin.jpg";
-// import github from "../../assets/img/github.jpg";
-// import gmail from "../../assets/img/gmail.jpg";
 import useTabStore from "../../store/useTabStore";
 import { useNavigate } from "react-router-dom";
 
@@ -26,9 +23,9 @@ const Home: React.FC = () => {
                 }}
                 key={index}
                 className={classNames(
-                  " mr-[14px] text-gray-400 cursor-pointer text-[18px]",
+                  " mr-[14px] text-gray-400 cursor-pointer text-[24px]",
                   " hover:text-gray-600 duration-300 ease-in-out delay-100",
-                  item.isSelected && " text-[#000] font-bold"
+                  item.isSelected && " text-[#000] font-bold border-b "
                 )}
               >
                 {item.label}
@@ -38,18 +35,7 @@ const Home: React.FC = () => {
         </div>
         <div>
           <div className=" flex items-center">
-            {/* <img
-              className=" w-[26px] h-[20px] rounded-lg ml-[20px] cursor-pointer"
-              src={gmail}
-            ></img>
-            <img
-              className=" w-[24px] h-[24px] rounded-lg ml-[20px] cursor-pointer"
-              src={github}
-            ></img>
-            <img
-              className=" w-[26px] h-[26px] rounded-lg ml-[20px] cursor-pointer"
-              src={linkedIn}
-            ></img> */}
+            <div className=" text-gray-500 text-[22px]">Kevin Du</div>
             <img
               className=" w-[40px] h-[40px] rounded-full ml-[20px]"
               src={avatarImg}
