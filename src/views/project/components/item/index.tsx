@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
-import avatarImg from "../../../assets/img/avatar.jpg";
-import { ComponyProjectItem } from "../../../store/useProjectStore";
+import avatarImg from "../../../../assets/img/avatar.jpg";
+import { ComponyProjectItem } from "../../../../store/useProjectStore";
 
 export interface ProjectItemProps {
   item: ComponyProjectItem;
@@ -19,10 +19,10 @@ const ProjectItem: React.FC<ProjectItemProps> = (props) => {
       >
         <img src={avatarImg} className=" h-[250px] w-[300px]"></img>
         <div className=" p-[12px] text-[20px]">
-          <div>name: {item.name}</div>
+          {item.name && <div>name: {item.name}</div>}
           {item.address && <div>address: {item.address}</div>}
           {item.repo && <div>repo: {item.repo}</div>}
-          <div>tech stack: {item.repo}</div>
+          {item.tachStack && <div>tech stack: {item.tachStack}</div>}
         </div>
       </div>
     </div>

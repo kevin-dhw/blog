@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import Home from "../../components/home";
-import avatarImg from "../../assets/img/avatar.jpg";
-import classNames from "classnames";
-import ProjectItem from "./item";
+import ProjectItem from "./components/item";
 import useProjectStore from "../../store/useProjectStore";
+import Detail, { DetailRef } from "./components/detail";
 
 const Project: React.FC = () => {
-  const { componyProject } = useProjectStore();
+  const { componyProject, personalProject, demoProject } = useProjectStore();
+  const [curItem, setCurItem] = useState({});
+  const detailRef = useRef<DetailRef>(null);
+
   return (
     <div className=" h-screen w-full bg-black flex flex-col">
       <Home></Home>
@@ -15,25 +17,55 @@ const Project: React.FC = () => {
           <div className=" text-[24px] pb-[14px]">compony's projects</div>
           <div className=" flex flex-wrap">
             {componyProject.map((item, idx) => {
-              return <ProjectItem key={idx} item={item} />;
+              return (
+                <div
+                  onClick={() => {
+                    setCurItem(item);
+                    detailRef.current?.open();
+                  }}
+                >
+                  <ProjectItem key={idx} item={item} />
+                </div>
+              );
             })}
-            <div
-              className={classNames(
-                "w-[250px] h-[450px] bg-[#171717] rounded-md overflow-hidden cursor-pointer mb-[20px]",
-                "hover:scale-105 transition-transform duration-300 ease-in-out "
-              )}
-            >
-              <img src={avatarImg} className=" h-[250px] w-[300px]"></img>
-              <div className=" p-[12px] text-[20px]">
-                <div>name: Project</div>
-                <div>address: Project</div>
-                <div>repo: Project</div>
-                <div>tech stack: Project</div>
-              </div>
-            </div>
+          </div>
+        </div>
+        <div>
+          <div className=" text-[24px] pb-[14px]">personal projects</div>
+          <div className=" flex flex-wrap">
+            {personalProject.map((item, idx) => {
+              return (
+                <div
+                  onClick={() => {
+                    setCurItem(item);
+                    detailRef.current?.open();
+                  }}
+                >
+                  <ProjectItem key={idx} item={item} />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <div>
+          <div className=" text-[24px] pb-[14px]">demo</div>
+          <div className=" flex flex-wrap">
+            {demoProject.map((item, idx) => {
+              return (
+                <div
+                  onClick={() => {
+                    setCurItem(item);
+                    detailRef.current?.open();
+                  }}
+                >
+                  <ProjectItem key={idx} item={item} />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
+      <Detail ref={detailRef} curItem={curItem} />
     </div>
   );
 };
